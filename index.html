@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Hyrule Monster Mash</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div id="monster-header">
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREm0P9p0BzAUjJEI18EukifnTHada_K4nSxK0VGIK5UA&s"
+        alt="monster-header"
+      />
+    </div>
+
+    <div class="container">
+      <form class="add-monster-form">
+        <h3>Add a horrible monster!</h3>
+
+        <input
+          type="text"
+          name="name"
+          value=""
+          placeholder="Search for your most hated monster by name..."
+          class="input-text"
+        />
+        <br />
+        <input
+          type="submit"
+          name="submit"
+          value="Add Monster"
+          class="submit"
+        />
+      </form>
+    </div>
+    <p style="text-align:center">
+      Build your collection of vile Hyrule monsters! <button id="new-monster-btn">Add a new monster!</button>
+    </p>
+
+    <div id="monster-collection"></div>
+    <script type="text/javascript" src="src/index.js"></script>
+  </body>
+</html>
