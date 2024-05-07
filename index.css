@@ -45,7 +45,7 @@ button {
     border-radius: 5px;
     height: 3rem;
     width: max-content;
-    color: #627ba4;
+    color: white;
     font-size: 15px;
     justify-self: center;
 }
@@ -53,7 +53,7 @@ button {
 button:hover {
     background-color: #601aa9;
     border: #601aa9;
-    color: #601aa9;
+    color: white;
 }
 
 .container {
@@ -74,7 +74,7 @@ button:hover {
     border-radius: 5px;
     height: 2rem;
     width: max-content;
-    color: #777777;
+    color: white;
     font-size: 18px;
     justify-self: center;
     font-family: monospace;
@@ -84,7 +84,7 @@ button:hover {
 .submit:hover {
     background-color: #601aa9;
     border: #601aa9 solid 1px;
-    color: #601aa9;
+    color: white;
   }
 
 .input-text {
