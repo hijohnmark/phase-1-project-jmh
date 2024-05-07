@@ -13,7 +13,7 @@ body {
 }
 
 #monster-header img {
-    height: auto;
+    height: 6rem;
     width: auto;
 }
 
@@ -60,12 +60,13 @@ button:hover {
     padding: 1rem;
     width: stretch;
     height: auto;
-    display: none;
+    display: flex;
     background: #f1ecf3;
 }
 
 .add-monster-form {
     width: 80%;
+    height: 100%;
 }
 
 .submit {
