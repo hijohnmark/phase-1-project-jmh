@@ -1,1 +1,1 @@
-Welcome to John Mark Harrell's Flatiron SE Flex Phase 1 project!
+Welcome to John Mark Harrell's Flatiron SE Flex Phase 1 project!This is my readme file
