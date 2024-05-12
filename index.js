@@ -1,28 +1,3 @@
-// let allMonsters = []
-
-// const getAllMonsters = () => {
-//     fetch("https://botw-compendium.herokuapp.com/api/v3/compendium/category/monsters")
-//     .then(response => response.json())
-//     .then(data => allMonsters = data.data)
-        
-
-// const createMonsterButton = document.querySelector("form")
-  
-// createMonsterButton.addEventListener("submit", (e) => {
-//     e.preventDefault()
-//     let foundMonster = allMonsters.find(monster => monster === e.target.value)
-//     console.log(foundMonster)
-
-//     let monsterObj = {
-//       name:e.target.name.value,
-//       image:e.target.image.value,
-//       hates: 0
-//     }
-//     renderOneMonster(monsterObj)
-//     // postNewMonster(monsterObj)
-
-//   })
-
 let allMonsters = []
 
 const getAllMonsters = () => {
@@ -41,13 +16,15 @@ createMonsterForm.addEventListener("submit", (e) => {
     const searchValue = searchInput.value.toLowerCase()
 
     const foundMonster = allMonsters.find(monster => monster.name === searchValue)
+    if (foundMonster) {
     renderOneMonster(foundMonster)
-});
+    } else alert("Monster not found! Please check your spelling and try again.")
+})
 
 
-  
   function renderOneMonster(monster){
     let monsterCollection = document.getElementById("monster-collection")
+    let numberOfHates = 0
     let li = document.createElement("li")
     let div = document.createElement("div")
     let div2 = document.createElement("div")
@@ -55,20 +32,23 @@ createMonsterForm.addEventListener("submit", (e) => {
     let p = document.createElement("p")
     let img = document.createElement("img")
     let span = document.createElement("span")
-    let button = document.createElement("button")
+    let hateButton = document.createElement("button")
+    let deleteButton = document.createElement("button")
     
     li.className = "card"
-    button.innerText = "Hate this monster!"
-    button.className = "hate-button"
+    hateButton.innerText = "Hate this monster"
+    hateButton.className = "hate-button"
+    deleteButton.innerText = "Remove from collection"
     span.className = "hate-count"
-    span.innerText = `Hates: ${monster.hates}`
+    span.innerText = `Hates: ${numberOfHates}`
     div.className = "content"
     h4.innerText = `${monster.name}`
     img.src = `${monster.image}`
     img.width = 250
     img.height = 250
 
-    div2.appendChild(button)
+    div2.appendChild(hateButton)
+    div2.appendChild(deleteButton)
     p.appendChild(img)
     p.appendChild(span)
     p.appendChild(div2)
@@ -76,11 +56,10 @@ createMonsterForm.addEventListener("submit", (e) => {
     div.appendChild(h4)
     li.appendChild(div)
     
-    // li.querySelector(".hate-button").addEventListener("click", () => {
-    //   monster.hates+= 1
-    //   li.querySelector("span").innerText = `Hates: ${monster.hates}`
-    //   updateHates(monster)
-    // })
+    li.querySelector(".hate-button").addEventListener("click", () => {
+       numberOfHates+= 1
+       li.querySelector("span").innerText = `Hates: ${numberOfHates}`
+    })
 
     monsterCollection.appendChild(li)
   }
