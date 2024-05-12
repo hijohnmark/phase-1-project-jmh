@@ -65,4 +65,6 @@ createMonsterForm.addEventListener("submit", (e) => {
     li.querySelector(".delete-button").addEventListener("click", () => li.remove())
 
     monsterCollection.appendChild(li)
+    li.addEventListener("mouseover", () => li.style.backgroundColor = "grey")
+    li.addEventListener("mouseleave", () => li.style.backgroundColor = "white")
   }
