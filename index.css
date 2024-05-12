@@ -21,6 +21,15 @@ body {
     margin: 3rem;
 }
 
+.title {
+    font-size: large;
+    color: black;
+}
+
+.description {
+    font-size: small;
+}
+
 .card {
     text-align: center;
     border: black 2px;

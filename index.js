@@ -31,8 +31,7 @@ createMonsterForm.addEventListener("submit", (e) => {
     let h4 = document.createElement("h4")
     let p = document.createElement("p")
     let img = document.createElement("img")
-    let hateSpan = document.createElement("span")
-    let desSpan = document.createElement("span")
+    let span = document.createElement("span")
     let hateButton = document.createElement("button")
     let deleteButton = document.createElement("button")
     
@@ -42,12 +41,12 @@ createMonsterForm.addEventListener("submit", (e) => {
     li.className = "card"
     hateButton.innerText = "Hate this monster"
     hateButton.className = "hate-button"
-    deleteButton.innerText = "Remove from collection"
     deleteButton.className = "delete-button"
-    desSpan.innerText = monster.description
-    hateSpan.className = "hate-count"
-    hateSpan.innerText = `Hates: ${numberOfHates}`
+    deleteButton.innerText = "Remove from collection"
+    span.className = "hate-count"
+    span.innerText = `Hates: ${numberOfHates}`
     div.className = "content"
+    h4.className = "title"
     h4.innerText = monsterNameTitle
     img.src = monster.image
     img.width = 250
@@ -55,9 +54,8 @@ createMonsterForm.addEventListener("submit", (e) => {
 
     div2.appendChild(hateButton)
     div2.appendChild(deleteButton)
-    p.appendChild(desSpan)
     p.appendChild(img)
-    p.appendChild(hateSpan)
+    p.appendChild(span)
     p.appendChild(div2)
     h4.appendChild(p)
     div.appendChild(h4)
