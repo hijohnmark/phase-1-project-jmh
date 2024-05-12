@@ -1,18 +1,50 @@
-const createMonsterButton = document.querySelector("form")
-  
-  
-  
-    createMonsterButton.addEventListener("submit", (e) => {
-    e.preventDefault()
-    let monsterObj = {
-      name:e.target.name.value,
-      image:e.target.image.value,
-      likes: 0
-    }
-    renderOneMonster(monsterObj)
-    postNewMonster(monsterObj)
+// let allMonsters = []
 
-  })
+// const getAllMonsters = () => {
+//     fetch("https://botw-compendium.herokuapp.com/api/v3/compendium/category/monsters")
+//     .then(response => response.json())
+//     .then(data => allMonsters = data.data)
+        
+
+// const createMonsterButton = document.querySelector("form")
+  
+// createMonsterButton.addEventListener("submit", (e) => {
+//     e.preventDefault()
+//     let foundMonster = allMonsters.find(monster => monster === e.target.value)
+//     console.log(foundMonster)
+
+//     let monsterObj = {
+//       name:e.target.name.value,
+//       image:e.target.image.value,
+//       hates: 0
+//     }
+//     renderOneMonster(monsterObj)
+//     // postNewMonster(monsterObj)
+
+//   })
+
+let allMonsters = []
+
+const getAllMonsters = () => {
+    fetch("https://botw-compendium.herokuapp.com/api/v3/compendium/category/monsters")
+    .then(response => response.json())
+    .then(data => allMonsters = data.data)
+}
+
+getAllMonsters()
+
+const createMonsterForm = document.querySelector("form")
+
+createMonsterForm.addEventListener("submit", (e) => {
+    e.preventDefault()
+    const searchInput = e.target.querySelector(".input-text")
+    const searchValue = searchInput.value.toLowerCase()
+
+    const foundMonster = allMonsters.find(monster => monster.name === searchValue)
+    renderOneMonster(foundMonster)
+});
+
+
   
   function renderOneMonster(monster){
     let monsterCollection = document.getElementById("monster-collection")
@@ -26,8 +58,8 @@ const createMonsterButton = document.querySelector("form")
     let button = document.createElement("button")
     
     li.className = "card"
-    button.innerText = "Like this toy!"
-    button.className = "like-button"
+    button.innerText = "Hate this monster!"
+    button.className = "hate-button"
     span.className = "hate-count"
     span.innerText = `Hates: ${monster.hates}`
     div.className = "content"
@@ -44,44 +76,41 @@ const createMonsterButton = document.querySelector("form")
     div.appendChild(h4)
     li.appendChild(div)
     
-    li.querySelector(".hate-button").addEventListener("click", () => {
-      monster.hates+= 1
-      li.querySelector("span").innerText = `Hates: ${monster.hates}`
-      updateHates(monster)
-    })
+    // li.querySelector(".hate-button").addEventListener("click", () => {
+    //   monster.hates+= 1
+    //   li.querySelector("span").innerText = `Hates: ${monster.hates}`
+    //   updateHates(monster)
+    // })
 
     monsterCollection.appendChild(li)
   }
   
-  const getAllMonsters = () => {
-    fetch("http://localhost:3000/toys")
-    .then(response => response.json())
-    .then(data => data.forEach(monster => renderOnemonster(monster)))
-    }
+
+    // .then(data => data.find(monster => renderOneMonster(monster)))
+
 
   getAllMonsters()
+//   const postNewMonster = (monsterObj) => {
+//     fetch("https://botw-compendium.herokuapp.com/api/v3/compendium/category/monsters",{
+//       method: "POST",
+//       headers: {
+//         "Content-Type": "application/json"
+//       },
+//       body:JSON.stringify(monsterObj)
+//     })
+//     .then(res => res.json())
+//     .then(newMonster => {
+//       monsterObj.id = newMonster.id
+//       updateLikes(monsterObj)
+//     })
+//   }
   
-  const postNewMonster = (monsterObj) => {
-    fetch("http://localhost:3000/toys",{
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body:JSON.stringify(toyObj)
-    })
-    .then(res => res.json())
-    .then(newMonster => {
-      monsterObj.id = newMonster.id
-      updateLikes(monsterObj)
-    })
-  }
-  
-  const updateLikes = (monsterObj) => {
-    fetch(`http://localhost:3000/toys/${monsterObj.id}`,{
-      method:"PATCH",
-      headers:{
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(monsterObj)
-    })
-  }
+//   const updateLikes = (monsterObj) => {
+//     fetch(`https://botw-compendium.herokuapp.com/api/v3/compendium/category/monsters/${monsterObj.id}`,{
+//       method:"PATCH",
+//       headers:{
+//         "Content-Type": "application/json"
+//       },
+//       body: JSON.stringify(monsterObj)
+//     })
+//   }

@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    font-family:  monospace;
+    font-family:  'Times New Roman', Times, serif;
 }
 
 #monster-header {
@@ -78,7 +78,7 @@ button:hover {
     color: white;
     font-size: 18px;
     justify-self: center;
-    font-family: monospace;
+    font-family: 'Times New Roman', Times, serif;
     margin: 3px;
 }
 
@@ -93,6 +93,6 @@ button:hover {
     height: 2rem;
     width: 60%;
     font-size: 18px;
-    font-family: monospace;
+    font-family: 'Times New Roman', Times, serif;
     margin: 3px;
 }
