@@ -4,7 +4,7 @@ Welcome to John Mark Harrell's Flatiron SE Flex Phase 1 project!
 
 ## Functionality
 
-This page is a simple tool that allows you to search for your most hated monsters from the kingdom of hyrule as depicted in The Legend of Zelda: Breath of the Wild. For a complete list of monsters in this game, visit https://zelda.fandom.com/wiki/Enemies_in_Breath_of_the_Wild
+This app is a simple tool that allows you to search for your most hated monsters from the kingdom of hyrule as depicted in The Legend of Zelda: Breath of the Wild. For a complete list of monsters in this game, visit https://zelda.fandom.com/wiki/Enemies_in_Breath_of_the_Wild
 
 To add your favorite monster, simply type its name into the input field at the top of the page, then click "Add Monster" and voila! The horrible monster you searched for will appear in your collection.
 
