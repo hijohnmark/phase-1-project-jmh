@@ -39,6 +39,7 @@ createMonsterForm.addEventListener("submit", (e) => {
     hateButton.innerText = "Hate this monster"
     hateButton.className = "hate-button"
     deleteButton.innerText = "Remove from collection"
+    deleteButton.className = "delete-button"
     span.className = "hate-count"
     span.innerText = `Hates: ${numberOfHates}`
     div.className = "content"
@@ -60,6 +61,8 @@ createMonsterForm.addEventListener("submit", (e) => {
        numberOfHates+= 1
        li.querySelector("span").innerText = `Hates: ${numberOfHates}`
     })
+
+    li.querySelector(".delete-button").addEventListener("click", () => li.remove())
 
     monsterCollection.appendChild(li)
   }
