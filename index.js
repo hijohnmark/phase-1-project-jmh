@@ -66,33 +66,3 @@ createMonsterForm.addEventListener("submit", (e) => {
 
     monsterCollection.appendChild(li)
   }
-  
-
-    // .then(data => data.find(monster => renderOneMonster(monster)))
-
-
-  getAllMonsters()
-//   const postNewMonster = (monsterObj) => {
-//     fetch("https://botw-compendium.herokuapp.com/api/v3/compendium/category/monsters",{
-//       method: "POST",
-//       headers: {
-//         "Content-Type": "application/json"
-//       },
-//       body:JSON.stringify(monsterObj)
-//     })
-//     .then(res => res.json())
-//     .then(newMonster => {
-//       monsterObj.id = newMonster.id
-//       updateLikes(monsterObj)
-//     })
-//   }
-  
-//   const updateLikes = (monsterObj) => {
-//     fetch(`https://botw-compendium.herokuapp.com/api/v3/compendium/category/monsters/${monsterObj.id}`,{
-//       method:"PATCH",
-//       headers:{
-//         "Content-Type": "application/json"
-//       },
-//       body: JSON.stringify(monsterObj)
-//     })
-//   }
