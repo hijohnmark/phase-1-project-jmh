@@ -14,10 +14,14 @@ NOTE: monster queries must be spelled correctly, but they are not case sensitive
 
 ## Roadmap
 
-Future functionality:
+We have some amazing new features in the works for this project:
+
 -A dropdown list of all monsters as an alternative method to find the monster you want to add to your collection.
+
 -POST, PATCH, and DELETE requests to persist this app's interactivity, so you can keep your collection forever and ever.
+
 -Prettier CSS formatting.
+
 -More information about each monster in each card.
 
 ## Acknowledgement
