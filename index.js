@@ -35,6 +35,9 @@ createMonsterForm.addEventListener("submit", (e) => {
     let hateButton = document.createElement("button")
     let deleteButton = document.createElement("button")
     
+    let monsterName = monster.name.split(' ')
+    let monsterNameTitle = monsterName.map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')
+    
     li.className = "card"
     hateButton.innerText = "Hate this monster"
     hateButton.className = "hate-button"
@@ -43,8 +46,8 @@ createMonsterForm.addEventListener("submit", (e) => {
     span.className = "hate-count"
     span.innerText = `Hates: ${numberOfHates}`
     div.className = "content"
-    h4.innerText = `${monster.name}`
-    img.src = `${monster.image}`
+    h4.innerText = monsterNameTitle
+    img.src = monster.image
     img.width = 250
     img.height = 250
 
